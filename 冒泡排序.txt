@@ -1,0 +1,26 @@
+#include<stdio.h>
+int swap1(int *p,int count)
+{
+    int i,j,temp;
+    for(i=0;i<count-1;i++)
+        for(j=0;j<count-1;j++)
+    {
+        if(p[j]>p[j+1])
+        {
+            temp=p[j+1];
+            p[j+1]=p[j];
+            p[j]=temp;
+        }
+    }
+}
+int main()
+{
+    int i,a[100],count,*p;
+    scanf("%d",&count);
+    for(i=0;i<count;i++)
+        scanf("%d",&a[i]);
+    p=a;
+    swap1(p,count);//冒泡排序
+    for(i=0;i<count;i++)
+        printf("%d\n",a[i]);
+}
